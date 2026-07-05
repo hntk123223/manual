@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>参加企業・団体向け 事前準備手順書 | 自社分析レポート作成</title>
+  <style>
+    :root {
+      --ink: #182233;
+      --muted: #5f6d7d;
+      --navy: #173b63;
+      --navy-2: #102b49;
+      --line: #d7e1ea;
+      --line-strong: #bad0df;
+      --bg: #f6f8fa;
+      --paper: #ffffff;
+      --soft: #eef6fb;
+      --safe: #eaf6ef;
+      --safe-line: #6fa77f;
+      --warn: #fff6dc;
+      --warn-line: #d7af42;
+      --stop: #fff0ee;
+      --stop-line: #d87970;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.82;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner,
+    .nav-inner,
+    main {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      padding: 32px 0 26px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 34px;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 10px 0 0;
+      color: #2d3a4b;
+      font-size: 17px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--soft);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .page-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .nav-inner a {
+      flex: 0 0 auto;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 6px 10px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: 28px 0 64px;
+    }
+
+    section {
+      scroll-margin-top: 64px;
+      margin-top: 34px;
+    }
+
+    section:first-child {
+      margin-top: 0;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      color: var(--navy);
+      font-size: 26px;
+      line-height: 1.45;
+    }
+
+    .section-title span {
+      display: inline-block;
+      border-bottom: 4px solid var(--navy);
+      padding-bottom: 9px;
+      margin-bottom: -11px;
+    }
+
+    h2,
+    h3,
+    h4 {
+      color: var(--navy);
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    h4 {
+      margin: 18px 0 8px;
+      font-size: 17px;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul,
+    ol {
+      margin: 8px 0 0;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin: 4px 0;
+    }
+
+    .lead-grid,
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .three-col,
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .panel,
+    .note,
+    .ok,
+    .stop,
+    .warn {
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .note {
+      border: 1px solid var(--line-strong);
+      background: var(--soft);
+    }
+
+    .ok {
+      border: 1px solid var(--safe-line);
+      background: var(--safe);
+    }
+
+    .stop {
+      border: 1px solid var(--stop-line);
+      background: var(--stop);
+    }
+
+    .warn {
+      border: 1px solid var(--warn-line);
+      background: var(--warn);
+    }
+
+    .stack > * + * {
+      margin-top: 14px;
+    }
+
+    .chapter-note {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .flow-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 18px;
+    }
+
+    .flow-card .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .procedure {
+      display: grid;
+      gap: 12px;
+      counter-reset: step;
+    }
+
+    .procedure-step {
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .procedure-step::before {
+      content: "STEP " counter(step);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      text-align: center;
+      padding: 14px 8px;
+    }
+
+    .procedure-body {
+      padding: 18px 20px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill-list span {
+      display: inline-flex;
+      min-height: 32px;
+      align-items: center;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .download-callout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      background: var(--soft);
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .download-callout p {
+      margin-bottom: 0;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .download-button,
+    .file-link {
+      color: var(--navy);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 14px;
+      border: 1px solid var(--navy);
+      border-radius: 6px;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .download-button.secondary {
+      background: #fff;
+      color: var(--navy);
+    }
+
+    .file-link {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--line);
+      padding: 13px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .example-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .example-pair {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .example-pair div {
+      padding: 14px;
+    }
+
+    .example-pair div + div {
+      border-left: 1px solid var(--line);
+      background: #fbfdff;
+    }
+
+    .example-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .report-list {
+      counter-reset: report;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .report-list li {
+      counter-increment: report;
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      margin: 0;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .report-list li::before {
+      content: counter(report);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .checklist ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 28px;
+      margin: 10px 0;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.42em;
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--navy);
+      border-radius: 3px;
+      background: #fff;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px 16px;
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 800;
+    }
+
+    details p {
+      margin-top: 10px;
+    }
+
+    .final-message {
+      border-radius: 8px;
+      background: var(--navy);
+      color: #fff;
+      padding: 22px;
+    }
+
+    .final-message h3 {
+      color: #fff;
+    }
+
+    @media (max-width: 880px) {
+      .lead-grid,
+      .two-col,
+      .three-col,
+      .flow,
+      .report-list,
+      .checklist,
+      .example-pair,
+      .download-callout,
+      .download-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .example-pair div + div {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner,
+      .nav-inner,
+      main {
+        width: min(100% - 24px, 1080px);
+      }
+
+      .procedure-step {
+        grid-template-columns: 1fr;
+      }
+
+      .procedure-step::before {
+        min-height: 46px;
+      }
+
+      .procedure-body {
+        padding: 16px;
+      }
+    }
+
+    @media print {
+      .page-nav {
+        display: none;
+      }
+
+      body,
+      .hero {
+        background: #fff;
+      }
+
+      section,
+      .panel,
+      .note,
+      .ok,
+      .stop,
+      .warn,
+      .procedure-step,
+      .flow-card,
+      details {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">生成 AI を活用したニーズ・シーズマッチングセミナー｜事前準備手順書</p>
+      <h1>参加企業・団体向け 事前準備手順書</h1>
+      <p class="subtitle">生成 AI を活用した「自社分析レポート」作成の手引き</p>
+      <p class="subtitle">企業と高専の新しい連携の可能性を探す勉強会 生成 AI を活用したニーズ・シーズマッチングセミナー</p>
+      <div class="meta-row">
+        <span class="tag">作業目安：30〜60分</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="page-nav" aria-label="ページ内移動">
+    <div class="nav-inner">
+      <a href="#s1">1. 手順書</a>
+      <a href="#s2">2. できること</a>
+      <a href="#s3">3. 目的</a>
+      <a href="#s4">4. 作成物</a>
+      <a href="#s5">5. 流れ</a>
+      <a href="#s6">6. 取り組む人</a>
+      <a href="#s7">7. ツール</a>
+      <a href="#s8">8. 入力ルール</a>
+      <a href="#s9">9. 作成手順</a>
+      <a href="#s10">10. 項目</a>
+      <a href="#s11">11. 発展分析</a>
+      <a href="#s12">12. 当日</a>
+      <a href="#s13">13. FAQ</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="s1">
+      <h2 class="section-title"><span>1. この手順書について</span></h2>
+      <div class="lead-grid">
+        <div class="panel">
+          <p>この手順書は、「企業と高専の新しい連携の可能性を探す勉強会 生成 AI を活用したニーズ・シーズマッチングセミナー」（以下「本セミナー」）に参加される企業・団体の皆さまに、事前準備として「自社分析レポート」を作成していただくためのものです。</p>
+          <p>本セミナーでは、参加企業・団体の皆さまが、自社の事業内容、強み、課題、今後取り組みたいことなどを整理し、旭川高専の研究・技術シーズとの接点を探します。</p>
+        </div>
+        <div class="note">
+          <h3>事前準備で行うこと</h3>
+          <p>生成 AI ツールとの対話を通じて、自社分析レポートを作成します。</p>
+          <p>完成度の高い企画書や共同研究計画書を作ることが目的ではありません。本セミナー当日に高専との連携可能性を検討するための材料を作ることが目的です。</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <p>生成 AI ツールに慣れていない方でも取り組めるよう、専用のプロンプトとガイドを用意しています。まずは、自社の中にある「少し気になっていること」「いつか取り組みたいこと」「若手や現場が困っていること」などを言葉にするところから始めます。</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <h2 class="section-title"><span>2. この資料でできること</span></h2>
+      <div class="panel">
+        <p>生成 AI ツールとの対話を通じて、自社の事業・強み・課題・今後取り組みたいことを整理し、本セミナー当日に高専との連携可能性を検討するための材料を作成します。</p>
+      </div>
+      <div class="ok" style="margin-top: 14px;">
+        <strong>生成AI前提の手順ですが、手動で作成しても構いません。</strong>
+        <p>レポートを手動で作成すること、生成AIの出力に手動で追記・修正すること、社内で確認した内容をあとから加えることも問題ありません。生成AIは整理を助ける補助ツールとして使ってください。</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <h2 class="section-title"><span>3. 本セミナーの目的・ゴール</span></h2>
+      <div class="panel">
+        <h3>本セミナーの目的</h3>
+        <p>本セミナーは、地域の企業・団体が、自社の事業内容、強み、課題、将来構想などを整理し、旭川高専が持つ研究・技術シーズとの接点を見つけることを目的としています。</p>
+        <p>企業・団体からは、次のような声が聞かれることがあります。</p>
+        <ul>
+          <li>高専に何を相談したらよいかわからない</li>
+          <li>自社の困りごとが、技術相談や共同研究につながるものなのか判断しにくい</li>
+          <li>高専の教員が持つ研究内容や技術シーズを、企業の立場からどのように活用できるのかわからない</li>
+          <li>共同研究、学生 PBL、採用や人材育成など、具体的な連携方法がわからない</li>
+          <li>自社の課題を整理したいが、何から考えればよいかわからない</li>
+        </ul>
+        <p>そこで本セミナーでは、生成 AI ツールを活用して、企業・団体側の情報を整理したうえで、高専の研究・技術シーズとの組み合わせを検討します。</p>
+        <p>生成 AI が答えを決めるのではなく、生成 AI との対話を通じて、自社だけでは気づきにくかった課題や可能性を整理することを目指します。</p>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <h3>本セミナーのゴール</h3>
+        <p>本セミナーのゴールは、参加企業・団体が、自社と旭川高専との連携可能性を整理し、次の行動につながる相談テーマを見つけることです。</p>
+        <ul>
+          <li>技術相談につながるテーマ</li>
+          <li>共同研究につながるテーマ</li>
+          <li>学生 PBL や授業連携につながるテーマ</li>
+          <li>商品・サービス開発につながるテーマ</li>
+          <li>業務改善やデジタル化につながるテーマ</li>
+          <li>試験、分析、評価、測定につながるテーマ</li>
+          <li>人材育成や採用連携につながるテーマ</li>
+          <li>地域課題の解決につながるテーマ</li>
+        </ul>
+      </div>
+      <div class="warn" style="margin-top: 14px;">
+        <p>本セミナーの中で、共同研究などの実施を決定するものではありません。まずは相談の入口となるテーマを見つけ、必要に応じて、終了後の技術相談や個別面談につなげます。</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <h2 class="section-title"><span>4. 事前準備で作成するもの・所要時間</span></h2>
+      <div class="lead-grid">
+        <div class="panel">
+          <h3>事前準備で作成するもの</h3>
+          <p>事前準備では、生成 AI ツールを使って「自社分析レポート」を作成します。</p>
+          <p>自社分析レポートには、主に次の内容を整理します。</p>
+          <ul>
+            <li>自社の事業内容</li>
+            <li>自社の製品・サービス</li>
+            <li>自社の強みや特徴</li>
+            <li>現在の困りごとや課題</li>
+            <li>今後取り組みたいこと</li>
+            <li>高専との連携につながる可能性があるテーマ</li>
+            <li>学生 PBL、授業連携、人材育成、採用連携につながる可能性があるテーマ</li>
+            <li>本セミナー当日に検討したいこと</li>
+            <li>追加で確認が必要なこと</li>
+          </ul>
+        </div>
+        <div class="note">
+          <h3>保存形式</h3>
+          <p>自社分析レポートは、Word または Google ドキュメントで出力・保存することをおすすめします。</p>
+          <p>本セミナー当日は、このレポートを生成 AI ツールに読み込ませます。</p>
+          <p>PDF のみで保存するのではなく、コピーや編集ができる元データを持参してください。PDF で社内共有・印刷していただいても構いませんが、当日は Word ファイル、Google ドキュメント、またはコピー可能なテキストとして開ける状態にしておいてください。</p>
+        </div>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <p>自社分析レポートは、社内で確認しやすく、本セミナー当日に参照しやすい資料として作成してください。完成度の高い企画書や共同研究計画書である必要はありません。本セミナー当日に、高専との連携可能性を検討するための材料として使用します。</p>
+        <h3>所要時間の目安</h3>
+        <p>事前準備にかける時間は、30〜60 分程度を目安とします。最大でも 60 分程度で完了することを想定してください。</p>
+        <p>すべての項目を詳しく整理する必要はありません。まずは生成 AI からの質問に回答し、自社の現状、強み、困りごと、今後取り組みたいことを、わかる範囲で整理してください。内容が十分にまとまっていない部分や、まだ漠然としている課題があっても問題ありません。 本セミナー当日に相談したいテーマを 3〜5 件程度に絞ることを目標にしてください。</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <h2 class="section-title"><span>5. 全体の流れ</span></h2>
+      <p class="chapter-note">この手順書で扱う範囲は、主に1段階目の「事前準備」です。</p>
+      <div class="flow">
+        <article class="flow-card">
+          <span class="num">1</span>
+          <h3>事前準備</h3>
+          <p>自社分析レポートを作成</p>
+          <p>参加企業・団体が、生成 AI ツールとの対話を通じて「自社分析レポート」を作成します。自社の事業内容、製品・サービス、強み、現在の困りごと、今後取り組みたいこと、本セミナー当日に検討したいことなどを整理します。</p>
+        </article>
+        <article class="flow-card">
+          <span class="num">2</span>
+          <h3>本セミナー当日</h3>
+          <p>自社分析レポートと高専シーズを照合</p>
+          <p>相談テーマ整理</p>
+          <p>生成 AI ツールを活用し、事前に作成した自社分析レポートと、旭川高専の研究・技術シーズを照らし合わせながら、自社の課題や強みと高専の技術・研究との接点を探します。</p>
+        </article>
+        <article class="flow-card">
+          <span class="num">3</span>
+          <h3>本セミナー終了後</h3>
+          <p>技術相談・個別面談</p>
+          <p>共同研究・PBL 等へ展開</p>
+          <p>本セミナーで整理したテーマのうち、具体的に相談を進めたいものについて、旭川高専の産学連携窓口が内容を確認します。必要に応じて、関係する教員との技術相談、共同研究、学生 PBL、施設見学、情報交換などにつなげます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="s6">
+      <h2 class="section-title"><span>6. 取り組む人について</span></h2>
+      <div class="panel">
+        <p>本レポートは、社長、経営者、管理職の方だけでなく、可能であれば若手社員や現場担当者の方にも参加していただくことを推奨します。</p>
+        <p>経営者や管理職は、会社全体の方向性、経営課題、今後の事業展開などを把握しています。</p>
+        <p>一方、若手社員や現場担当者は、日常業務の中で感じる不便、非効率、顧客からの要望、新しい技術への関心など、経営層とは異なる視点を持っています。</p>
+      </div>
+      <div class="two-col" style="margin-top: 14px;">
+        <div class="note">
+          <h3>経営者・管理職の視点</h3>
+          <ul>
+            <li>中長期的な経営課題</li>
+            <li>新規事業や新商品開発</li>
+            <li>生産性向上</li>
+            <li>技術開発</li>
+            <li>デジタル化や AI 活用</li>
+            <li>人材確保や人材育成</li>
+            <li>事業承継</li>
+            <li>市場変化への対応</li>
+          </ul>
+        </div>
+        <div class="note">
+          <h3>若手社員・現場担当者の視点</h3>
+          <ul>
+            <li>日常業務で不便に感じていること</li>
+            <li>手作業が多く、負担になっている業務</li>
+            <li>属人化している業務</li>
+            <li>ミスが発生しやすい作業</li>
+            <li>顧客や利用者からよく聞く要望</li>
+            <li>新しく学びたい技術や使ってみたい仕組み</li>
+            <li>採用や教育に関して感じている課題</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <p>1 社・1 団体につき 1 名でも取り組めますが、可能であれば、立場や所属の異なる 2〜3 名程度で意見を出し合いながら作成してください。 複数名で作成する場合は、主担当者が回答し、必要に応じて経営・管理、現場、若手、事務などの視点を補足すると整理しやすくなります。</p>
+        <p>複数名での作業が難しい場合は、事前に社内の関係者から困りごとや改善案を聞き取っておく方法もあります。</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <h2 class="section-title"><span>7. 使用する生成 AI ツール・配布ファイル</span></h2>
+      <div class="panel">
+        <h3>使用する生成 AI ツールについて</h3>
+        <p>事前準備では、参加企業・団体が利用できる生成 AI ツールを使用してください。想定している生成 AI ツールの例は次のとおりです。</p>
+        <div class="pill-list">
+          <span>ChatGPT</span>
+          <span>Microsoft Copilot</span>
+          <span>Claude</span>
+          <span>Gemini</span>
+        </div>
+        <p>業務として利用する場合は、会社・団体で利用が認められている生成 AI ツールを使用してください。普段利用している生成 AI ツールがある場合も、社内ルール、情報セキュリティ方針、利用規程などを確認し、業務利用が認められているものを使用してください。</p>
+        <p>また、生成 AI ツールには、機密情報、個人情報、取引先名、非公開の金額、契約内容、未公開技術などを入力しないでください。</p>
+        <p>ツールによって、ファイル添付、検索、リサーチ、高度な推論などの機能に違いがあります。本手順書では、特定の生成 AI ツールだけに依存しない方法で進めます。</p>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <h3>配布ファイル</h3>
+        <div class="download-callout">
+          <div>
+            <h4>まず、配布ファイル一式をダウンロードしてください</h4>
+            <p>事前準備では、下記 3 つの配布ファイルを使用します。まとめて取得する場合は、ZIP ファイルをダウンロードして展開してください。</p>
+          </div>
+          <a class="download-button" href="./downloads/seminar-files.zip" download>3ファイルをまとめてダウンロード</a>
+        </div>
+        <p>個別に確認・保存したい場合は、次のリンクから各ファイルをダウンロードできます。</p>
+        <div class="download-grid">
+          <a class="download-button secondary" href="./downloads/01_%E8%87%AA%E7%A4%BE%E5%88%86%E6%9E%90%E3%83%AC%E3%83%9B%E3%82%9A%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%82%AB%E3%82%99%E3%82%A4%E3%83%88%E3%82%99.md" download>01 ガイド</a>
+          <a class="download-button secondary" href="./downloads/02_%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>02 スタート用プロンプト</a>
+          <a class="download-button secondary" href="./downloads/03_%E7%99%BA%E5%B1%95%E5%88%86%E6%9E%90%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>03 発展分析用プロンプト</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ファイル名</th>
+                <th>用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a class="file-link" href="./downloads/01_%E8%87%AA%E7%A4%BE%E5%88%86%E6%9E%90%E3%83%AC%E3%83%9B%E3%82%9A%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%82%AB%E3%82%99%E3%82%A4%E3%83%88%E3%82%99.md" download>01_自社分析レポート作成ガイド.md</a></td>
+                <td>生成 AI ツールに読み込ませるガイドです。本セミナーの目的、進め方、確認する項目、機密情報の扱い、レポートの出力形式などを記載しています。</td>
+              </tr>
+              <tr>
+                <td><a class="file-link" href="./downloads/02_%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>02_スタート用プロンプト.md</a></td>
+                <td>生成 AI ツールに最初に入力するプロンプトです。生成 AI が一問ずつ質問しながら、自社分析レポート作成を進めます。</td>
+              </tr>
+              <tr>
+                <td><a class="file-link" href="./downloads/03_%E7%99%BA%E5%B1%95%E5%88%86%E6%9E%90%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>03_発展分析用プロンプト.md</a></td>
+                <td>任意で使用するプロンプトです。基本の自社分析レポートを作成した後、業界動向、競合動向、技術動向などを調べたい場合に使用します。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="s8">
+      <h2 class="section-title"><span>8. 入力してよい情報・避ける情報</span></h2>
+      <p class="chapter-note">生成AIに入力する前に、この章で入力ルールと一般化の考え方を確認してください。</p>
+      <div class="panel">
+        <p>生成 AI ツールには、公開しても差し支えない範囲の情報を入力してください。</p>
+      </div>
+      <div class="two-col" style="margin-top: 14px;">
+        <div class="ok">
+          <h3>入力してよい情報の例</h3>
+          <ul>
+            <li>一般的な事業内容</li>
+            <li>主な製品・サービスの概要</li>
+            <li>自社の強みや特徴</li>
+            <li>業務上の困りごとを一般化した内容</li>
+            <li>今後取り組みたいこと</li>
+            <li>高専に相談してみたいこと</li>
+            <li>若手社員や現場担当者が感じている一般的な課題</li>
+          </ul>
+        </div>
+        <div class="stop">
+          <h3>入力を避ける情報の例</h3>
+          <ul>
+            <li>個人の氏名、住所、電話番号など</li>
+            <li>顧客名や取引先名</li>
+            <li>公開していない売上、原価、利益などの詳細</li>
+            <li>契約内容</li>
+            <li>製品の非公開設計情報</li>
+            <li>特許出願前の技術情報</li>
+            <li>社外秘資料</li>
+            <li>パスワードや認証情報</li>
+            <li>個別の社員に関する評価や処遇情報</li>
+            <li>取引先から提供された非公開情報</li>
+          </ul>
+        </div>
+      </div>
+      <div class="note" style="margin-top: 14px;">
+        <strong>基本的な考え方</strong>
+        <p>具体的な会社名、金額、製品名、個人名などを入力しなくても、情報を一般化することで分析できます。自社や取引先に不利益が生じる可能性のある情報は入力せず、課題の内容を一般化して表現してください。</p>
+      </div>
+      <div class="panel" style="margin-top: 14px;">
+        <h3>入力内容を一般化する例</h3>
+        <p>具体的な会社名、金額、製品名などを入力しなくても、情報を一般化することで分析できます。以下の例を参考にしてください。</p>
+        <div class="example-list">
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>取引先の○○株式会社向け製品で不具合が発生している。</div><div><span class="example-label">一般化した表現</span>特定の取引先向けに製造している部品で、品質のばらつきが課題になっている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>A 社との契約では、製品 1 個当たりの原価が○○円で、利益率が○％しかない。</div><div><span class="example-label">一般化した表現</span>特定の受注製品について、原材料費や製造コストの上昇により、採算性が低下している。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>社員の○○さんが担当している工程で、毎月○件程度の入力ミスが発生している。</div><div><span class="example-label">一般化した表現</span>特定の担当者に依存している手作業の入力工程があり、入力ミスや作業の属人化が課題になっている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>現在開発中の新製品○○に、未公開のセンサー技術を搭載する予定である。</div><div><span class="example-label">一般化した表現</span>現在、新しい計測技術を活用した製品を検討しているが、技術的な実現性や評価方法が課題になっている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>顧客の○○様から、納品した製品について「△△の部分が使いにくい」とクレームが入っている。</div><div><span class="example-label">一般化した表現</span>一部の顧客から、製品の使いやすさや操作性について改善要望が寄せられている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>社内で使っている○○システムのログイン管理が不十分で、□□の画面から誰でも情報を見られる状態になっている。</div><div><span class="example-label">一般化した表現</span>社内システムの利用権限や情報管理の方法に課題があり、業務上必要な範囲で安全に情報を扱う仕組みを見直したい。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>○○製品の売上が前年より○％減少しており、特に A 社からの受注が○件減っている。</div><div><span class="example-label">一般化した表現</span>一部の製品やサービスについて、受注や売上が伸び悩んでおり、新しい顧客層への展開や商品改善を検討したい。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>○○さんは作業スピードが遅く、残業が多いため、チーム全体の進捗に影響している。</div><div><span class="example-label">一般化した表現</span>一部の業務で作業負荷に偏りがあり、担当者によって作業時間や進め方にばらつきが出ている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>○○社との契約では、納期が毎月○日で、遅延すると違約金が発生するため、現場に大きな負担がかかっている。</div><div><span class="example-label">一般化した表現</span>特定の取引条件により、短納期対応や工程管理の負担が大きくなっており、作業計画や進捗管理の改善が課題になっている。</div></div>
+          <div class="example-pair"><div><span class="example-label">避けたい表現</span>来年度から○○市の□□施設向けに新サービスを展開する予定で、現在△△社と交渉している。</div><div><span class="example-label">一般化した表現</span>今後、新しい分野や顧客層に向けたサービス展開を検討しており、ニーズ調査や提供方法の整理が課題になっている。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="s9">
+      <h2 class="section-title"><span>9. 自社分析レポート作成手順</span></h2>
+      <div class="panel">
+        <p>この章では、本セミナーに参加する前に行っていただきたい「自社分析レポート」の作成手順を説明します。</p>
+        <p>自社分析レポートは、本セミナー当日に高専との連携可能性を検討するための土台となる資料です。</p>
+        <p>生成 AI ツールにガイドとプロンプトを読み込ませ、一問ずつ質問に回答しながら、自社の事業、強み、課題、今後取り組みたいことを整理していきます。</p>
+      </div>
+      <div class="procedure" style="margin-top: 14px;">
+        <article class="procedure-step"><div class="procedure-body"><h3>配布ファイルをダウンロードする</h3><p><a class="file-link" href="./downloads/seminar-files.zip" download>seminar-files.zip</a> をダウンロードし、展開します。展開後、3 つの配布ファイルが入っていることを確認してください。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>生成 AI ツールを開く</h3><p>会社・団体で利用が認められている生成 AI ツールを開き、新しいチャットを開始します。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>ガイドファイルを添付する</h3><p><a class="file-link" href="./downloads/01_%E8%87%AA%E7%A4%BE%E5%88%86%E6%9E%90%E3%83%AC%E3%83%9B%E3%82%9A%E3%83%BC%E3%83%88%E4%BD%9C%E6%88%90%E3%82%AB%E3%82%99%E3%82%A4%E3%83%88%E3%82%99.md" download>01_自社分析レポート作成ガイド.md</a> をファイル添付します。※添付できない場合はテキスト内容を貼り付けます。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>スタート用プロンプトを入力する</h3><p><a class="file-link" href="./downloads/02_%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>02_スタート用プロンプト.md</a> のテキスト内容を全コピーし、プロンプト入力欄にそのテキストを貼り付けて送信します。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>質問に回答する</h3><p>生成 AI が一問ずつ質問します。わかる範囲で回答してください。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>必要に応じて社内で確認する</h3><p>若手社員、現場担当者、管理職など、立場の異なる方の意見を反映します。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>自社分析レポートを作成する</h3><p>必要な質問が終わると、生成 AI がレポートを作成します。事実誤認や機密情報を確認します。必要に応じて手動で追記・修正してください。生成AIを使わずに手動で作成した内容を加えても問題ありません。</p></div></article>
+        <article class="procedure-step"><div class="procedure-body"><h3>レポートを保存する</h3><p>チャット画面に残すだけでなく、Word または Google ドキュメントにコピーして保存します。</p></div></article>
+      </div>
+      <div class="warn" style="margin-top: 14px;">
+        <strong>回答に困ったとき</strong>
+        <p>「わかりません」「該当しません」「現時点では未定です」「社内で確認が必要です」と答えても構いません。</p>
+      </div>
+    </section>
+
+    <section id="s10">
+      <h2 class="section-title"><span>10. 作成する自社分析レポートの項目</span></h2>
+      <div class="panel">
+        <p>生成 AI との対話が終了すると、次のような項目で自社分析レポートを作成します。</p>
+      </div>
+      <ol class="report-list" style="margin-top: 14px;">
+        <li>企業・団体の概要</li>
+        <li>主な事業内容</li>
+        <li>主な製品・サービス</li>
+        <li>顧客・利用者</li>
+        <li>自社の強み・特徴</li>
+        <li>保有している技術・設備・データ・人材・ノウハウ</li>
+        <li>現在の困りごと・課題</li>
+        <li>今後取り組みたいこと</li>
+        <li>高専との連携につながる可能性があるテーマ</li>
+        <li>学生 PBL・授業連携・人材育成・採用連携につながる可能性</li>
+        <li>本セミナー当日に検討したいこと</li>
+        <li>追加で確認が必要なこと</li>
+        <li>生成 AI による仮説・提案</li>
+      </ol>
+      <div class="warn" style="margin-top: 14px;">
+        <h3>確認のポイント</h3>
+        <p>生成 AI による仮説や提案は、確認済みの事実ではありません。必要に応じて、「仮説」「可能性」「要確認」と明記し、自社の実情に合うか確認してください。</p>
+        <ul>
+          <li>事実と異なる内容が入っていないか</li>
+          <li>機密情報や個人情報が含まれていないか</li>
+          <li>取引先名や個人名が残っていないか</li>
+          <li>生成 AI の提案と、自社の実際の考えが混ざっていないか</li>
+          <li>本セミナー当日に検討したい内容が分かりやすく整理されているか</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s11">
+      <h2 class="section-title"><span>11. 発展分析について（任意）</span></h2>
+      <div class="panel">
+        <p>基本の自社分析レポートが作成できた後、余力がある場合は、発展分析に取り組むこともできます。</p>
+        <p>発展分析では、業界動向、競合動向、技術動向、他社事例などを調べます。利用している生成 AI ツールで、Web 検索、リサーチ、ディープリサーチ、高度な推論などの機能が使える場合に、<a class="file-link" href="./downloads/03_%E7%99%BA%E5%B1%95%E5%88%86%E6%9E%90%E7%94%A8%E3%83%95%E3%82%9A%E3%83%AD%E3%83%B3%E3%83%95%E3%82%9A%E3%83%88.md" download>03_発展分析用プロンプト.md</a> を使用してください。</p>
+        <p>発展分析は任意です。本セミナー参加に必須ではありません。</p>
+        <h3>発展分析で調べられること</h3>
+        <ul>
+          <li>業界全体の動向</li>
+          <li>同業他社や競合企業の取り組み</li>
+          <li>AI、IoT、ロボット、データ活用などの技術動向</li>
+          <li>人手不足、技能継承、業務効率化への対応事例</li>
+          <li>商品・サービス開発のヒント</li>
+          <li>高専との連携につながりそうなテーマ</li>
+          <li>学生 PBL や人材育成につながりそうなテーマ</li>
+        </ul>
+      </div>
+      <div class="warn" style="margin-top: 14px;">
+        <strong>注意点</strong>
+        <p>発展分析は、公開情報や一般的な業界動向をもとにした参考情報です。生成 AI の出力には、誤り、古い情報、推測、一般論が含まれる可能性があります。出力された内容をそのまま事実として扱わず、必要に応じて情報源や自社の実情を確認してください。</p>
+      </div>
+    </section>
+
+    <section id="s12">
+      <h2 class="section-title"><span>12. 本セミナー当日に行うこと・持ち物</span></h2>
+      <div class="two-col">
+        <div class="panel">
+          <h3>本セミナー当日に行うこと</h3>
+          <ol>
+            <li>事前に作成した自社分析レポートを開く</li>
+            <li>講師の説明に沿って、生成 AI に自社分析レポートを読み込ませる</li>
+            <li>自社分析レポートを、生成 AI が読み込みやすい形に整理する</li>
+            <li>機密情報や固有名詞が残っていないか確認する</li>
+            <li>高専の研究・技術シーズ資料と照合する</li>
+            <li>自社の強み・課題と高専シーズの接点を探す</li>
+            <li>高専に相談できそうなテーマを複数抽出する</li>
+            <li>優先して相談したいテーマを整理する</li>
+          </ol>
+        </div>
+        <div class="panel checklist">
+          <div>
+            <h3>必ずご持参いただきたいもの</h3>
+            <ul>
+              <li>ノートパソコン</li>
+              <li>生成 AI ツールを利用できる環境</li>
+              <li>作成した自社分析レポート（Word または Google ドキュメントで開ける状態）</li>
+            </ul>
+          </div>
+          <div>
+            <h3>任意でご持参いただきたいもの</h3>
+            <ul>
+              <li>会社案内や商品・サービス資料</li>
+              <li>公開可能な自社情報</li>
+              <li>当日整理したい課題や相談内容</li>
+              <li>社内で聞き取った意見やメモ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="warn" style="margin-top: 14px;">
+        <p>※いずれも紙ではなく、データで構いません。</p>
+        <p>会場では、電源と Wi-Fi を利用できます。</p>
+      </div>
+    </section>
+
+    <section id="s13">
+      <h2 class="section-title"><span>13. FAQ・最後に</span></h2>
+      <details open>
+        <summary>Q1. 生成 AI ツールに慣れていなくても参加できますか。</summary>
+        <p>参加できます。本手順書とプロンプトを使うことで、生成 AI が一問ずつ質問しながら進行します。操作に不安がある場合でも、わかる範囲で回答していただければ問題ありません。</p>
+      </details>
+      <details>
+        <summary>Q2. 事前準備は必須ですか。</summary>
+        <p>本セミナー当日の検討を円滑に進めるため、事前準備として自社分析レポートの作成をお願いします。ただし、完成度の高い資料である必要はありません。途中までの整理でも、当日の検討材料として活用できます。</p>
+      </details>
+      <details>
+        <summary>Q3. 社長や管理職だけで作成してもよいですか。</summary>
+        <p>可能です。ただし、若手社員や現場担当者の視点を入れることで、日常業務の困りごとや改善のヒントが見つかりやすくなります。可能であれば、複数の立場の方の意見を反映してください。</p>
+      </details>
+      <details>
+        <summary>Q4. 会社の機密情報を入力する必要がありますか。</summary>
+        <p>必要ありません。生成 AI には、機密情報、個人情報、取引先名、非公開の金額、契約内容、未公開技術などを入力しないでください。課題を一般化した表現に置き換えることで、分析を進めることができます。</p>
+      </details>
+      <details>
+        <summary>Q5. 作成した自社分析レポートは提出が必要ですか。</summary>
+        <p>本手順書の段階では、本セミナー当日に各社・各団体が使用する資料として作成することを想定しています。提出の有無や方法については、主催者からの案内に従ってください。</p>
+      </details>
+      <details>
+        <summary>Q6. 生成AIを使わずに手動で作った内容を使ってもよいですか。</summary>
+        <p>使って構いません。生成AIは整理を助けるための手段です。手動で作成した内容、社内で追記した内容、生成AIの出力を修正した内容のいずれも、当日の検討材料として活用できます。</p>
+      </details>
+      <div class="final-message" style="margin-top: 16px;">
+        <h3>最後に</h3>
+        <p>今回の事前準備は、自社の課題を完璧に整理することが目的ではありません。</p>
+        <p>生成 AI との対話を通じて、自社の事業、強み、困りごと、今後取り組みたいことを言葉にし、高専との連携可能性を考えるための材料を作ることが目的です。</p>
+        <p>現時点で相談内容が明確でなくても問題ありません。まずは、自社の中にある「少し気になっていること」「いつか取り組みたいこと」「若手や現場が困っていること」などを整理することから始めてください。</p>
+        <p>本セミナー当日は、その内容をもとに、旭川高専の研究・技術シーズとの接点を一緒に探していきます。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
